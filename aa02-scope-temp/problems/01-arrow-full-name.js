@@ -17,20 +17,23 @@ arrowGetFullName(p2); // => 'Charlie Brown'
 ***********************************************************************/
 
 // Your code here
-const users = [
-  {
-      firstName: 'Gerald',
-      lastName: 'fish'
-
-
-  },
-]
-const printName = users => {
-  users.forEach(object) => {console.log(object.name){
-
+const arrowGetFullName = (person) => {
+  let arr =[];
+      for(let keys in person) {
+        if(typeof person[keys] === 'string') {
+        arr.push(person[keys]);
+        }
       }
-  }
-}
+      return arr.join(' ');
+    }
+
+    let p1 = {
+      firstName: 'John',
+      lastName: 'Doe'};
+      console.log(arrowGetFullName(p1)); // => 'John Doe'
+      let p2 = {firstName: 'Charlie', lastName: 'Brown', age: 9};
+      console.log(arrowGetFullName(p2)); // => 'Charlie Brown'
+      
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {
