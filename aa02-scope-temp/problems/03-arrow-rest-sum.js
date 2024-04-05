@@ -15,7 +15,7 @@ const arrowRestSum = (...num) => {
   num.forEach((el) => {
   sum += el
   })
-  return sum 
+  return sum
 
 
 }
