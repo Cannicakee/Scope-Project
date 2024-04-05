@@ -17,9 +17,23 @@ let result2 = arrowMyMap(['run', 'Forrest'], yell);
 console.log(result2);   // [ 'RUN!', 'FORREST!' ]
 
 ***********************************************************************/
+const arrowMyMap = (array, cb) => {
+    let newArray = [];
+    array.forEach((el, index, array) => {
+      let result = cb(el);
+      newArray.push(result);
+    })
+    return newArray;
+}
 
-// Your code here 
 
+let result1 = arrowMyMap([100, 25, 81, 64], Math.sqrt);
+console.log(result1);   // [ 10, 5, 9, 8 ]
+
+const yell = el => el.toUpperCase() + '!'
+
+let result2 = arrowMyMap(['run', 'Forrest'], yell);
+console.log(result2);   // [ 'RUN!', 'FORREST!' ]
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {
