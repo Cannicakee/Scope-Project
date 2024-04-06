@@ -15,9 +15,21 @@ console.log(rudePerson2("I love dogs")); // prints "I yo love yo dogs"
 
 
 ***********************************************************************/
+const interrupter = interruptingWord => {
+   return function interruptedStr(str) {
+    let split = str.split(' ');
+    result = split.reduce((el, a) => el.concat(a, interruptingWord), []);
+    result.pop();
+    return result.join(' ')
+   }
+}
 
-// Your code here 
+let rudePerson = interrupter("what"); // => returns a function
+console.log(rudePerson("how are you")); // prints "how what are what you"
+console.log(rudePerson("I like pie")); // prints "I what like what pie"
 
+let rudePerson2 = interrupter("yo"); // => returns a function
+console.log(rudePerson2("I love dogs")); // prints "I yo love yo dogs"
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {
