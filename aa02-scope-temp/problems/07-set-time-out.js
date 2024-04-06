@@ -17,9 +17,17 @@ funcTimer(5000, partyFunc); // in 5 seconds prints: "Party time!"
 
 
 ***********************************************************************/
+const funcTimer = (time, func) => {
+  const delay = time / 1000;
+  setTimeout(func, delay * 1000);
+}
 
-// Your code here 
 
+function partyFunc () {
+  console.log("Party time!")
+}
+
+funcTimer(5000, partyFunc); // in 5 seconds prints: "Party time!"
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {
